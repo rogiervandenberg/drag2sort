@@ -60,10 +60,15 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-    $( function() {
-      $( "#sortable" ).sortable();
-      $( "#sortable" ).disableSelection();
-    } );
+
+    $(function() {
+       $( "#sortable" ).sortable({
+         connectWith: ".connectedSortable",
+         stop: function( event, ui ) {
+          console.log("Stopped dragging");
+         }
+       }).disableSelection();
+     });
     </script>
   </body>
 </html>
